@@ -9,6 +9,7 @@ class NewsController extends Controller {
       ]
     };
     const { ctx } = this;
+    console.log(ctx.query)
     ctx.body = dataList;
   }
 }
