@@ -8,6 +8,7 @@ class NewsController extends Controller {
         { id: 2, title: 'this is news 2', url: '/news/2' }
       ]
     };
+    // let result = await this.app.mysql.insert("user",{username:"lisi",password:"1234"})
     const { ctx } = this;
     console.log(ctx.query)
     ctx.body = dataList;
