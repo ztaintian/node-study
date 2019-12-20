@@ -3,10 +3,18 @@
 const Service = require('egg').Service;
 
 class UserService extends Service {
-  async getUserById(id) {
-    // 根据id查询用户信息
-    // return await this.app.mysql.get('test', {id: id});
-    return this.app.mysql.insert("user",{name:"lisi",id:"1"})
+  async insertUser() {
+    var result = await this.app.mysql.insert("user", { name: "li", id: "2" });
+    return 1;
+  }
+  async getUser(id) {
+    var result;
+    if (id) {
+      result = await this.app.mysql.get("user", { id: id });
+    } else {
+      result = await this.app.mysql.select("user");
+    }
+    return result;
   }
 }
 module.exports = UserService;
